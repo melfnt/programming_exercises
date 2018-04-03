@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Programming exercises</title>
+	<link rel="stylesheet" type="text/css" href="style/main.css">
+</head>
+
+<body>
+	
+	<script src="core/parser.js"></script>
+	<script src="interaction/init.js"></script>
+	
+	<table id="table_exercise">
+		<tr>
+			<th>select all <input id="select_all" type="checkbox"></th><th>id</th><th>Topic</th><th>Level</th><th>Text</th>
+		</tr>
+	</table>
+	
+	<form action="https://www.overleaf.com/docs" method="post" target="_blank">
+		<textarea id="latex_snippet" class="nodisplay" name="encoded_snip" rows="10" cols="60"> ciao ciao </textarea>
+		<input class="nodisplay" type="checkbox" name="splash" value="none" checked />
+		<input type="submit" id="generate" value="genera!">	
+	</form> 
+	
+</body>

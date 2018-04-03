@@ -1,0 +1,168 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+
+%environment solution
+\usepackage{verbatim}
+\newenvironment{solution}{\verbatim}{\endverbatim}
+
+%environment exercise
+\newenvironment{exercise}[3]{%
+\noindent \textbf{\footnotesize difficoltà #2}
+#3 \\
+}{}
+
+
+\begin{document}
+
+\title{Esercizi FTP}
+\author{Lucio Messina e Ludovica Pannitto}
+\maketitle
+
+\section{Esercizi sul for (senza array)}
+
+\begin{exercise}{for}{1}{Scrivere un programma che stampi 1000 volte "non metterò le puntine sulla sedia della maestra".}
+\begin{solution}
+var i;
+for ( i=0; i<100; i=i+1 )
+{
+    writeln ("non metterò le puntine sulla sedia della maestra");
+}
+\end{solution}
+\end{exercise}
+
+\begin{exercise}{for}{1}{Scrivere un programma che setti una variabile n con un valore a piacere. Poi stampi in sequenza "bim", n volte "bum" e infine "bam".}
+\begin{solution}
+var n=100;
+writeln ("bim");
+for ( var i=0; i<n; i=i+1 )
+{
+    writeln ("bum");
+}
+writeln ("bam");
+\end{solution}
+\end{exercise}
+
+\begin{exercise}{for}{1}{Scrivere una funzione che inizializzi una variabile tot a zero. Poi, per 8 volte aggiunga 3 a tot. Infine, restituisca il valore di tot.
+che valore calcola la funzione appena scritta?}
+\begin{solution}
+function foo ()
+{
+    var tot = 0;
+    for ( var i=0; i<8; i=i+1 )
+    {
+         tot = tot + 3;
+    }
+    return tot;
+}
+
+La funzione esegue la moltiplicazione 3*8, sommando 8 volte il valore 3 alla variabile tot. Il risultato è 24.
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise}{for}{1}{Scrivere un programma che stampi tutti i numeri da 1 a 100.}
+\begin{solution}
+for ( var i=1; i<=100; i=i+1 )
+{
+    writeln (i);
+}
+\end{solution}
+\end{exercise}
+
+\begin{exercise}{for}{1}{Scrivere un programma che stampi tutti i numeri da 100 a 1, andando a ritroso.}
+\begin{solution}
+for ( var i=100; i>=1; i=i-1 )
+{
+    writeln (i);
+}
+\end{solution}
+\end{exercise}
+
+\begin{exercise}{for}{2}{Scrivere un programma che inizializzi una variabile n con un valore pari. Poi stampi tutti i numeri pari da n a 100 (estremi compresi).}
+\begin{solution}
+var n = 18;
+for ( var i=n; i<=100; i=i+2 )
+{
+    writeln (i);
+}
+\end{solution}
+\end{exercise}
+
+\begin{exercise}{for}{1}{Modificare il programma del punto precedente in modo che funzioni anche se n è dispari.}
+\begin{solution}
+var n = 15;
+if ( n%2 == 1 )
+{
+    n = n+1;
+}
+for ( var i=n; i<=100; i=i+2 )
+{
+    writeln (i);
+}
+\end{solution}
+\end{exercise}
+
+\begin{exercise}{for}{1}{Scrivere un programma che setta una variabile x con un numero letto dall'utente. Poi stampi tutti i numeri da 1 a x, la stringa "Babbo Natale" e subito dopo tutti i numeri da x a 1, a ritroso.}
+\begin{solution}
+var x = readnum ();
+for ( var i=1; i<=x; i=i+1 )
+{
+    writeln (i);
+}
+writeln ("Babbo Natale");
+for ( var i=x; i>=0; i=i-1 )
+{
+    writeln (i);
+}
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise}{for}{2}{Scrivere un programma che stampi tutti i numeri da 1 a 100, in ordine, saltando quelli che sono multipli di 5.\\
+    Suggerimento: scorrere i numeri normalmente con una variabile i che va da 1 a 100, e controllare dentro il for se i è multiplo di 5 oppure no.}
+\begin{solution}
+for ( var i=1; i<=100; i=i+1 )
+{
+    if ( i%5==0 )
+    {
+        writeln (i);
+    }
+}
+\end{solution}
+\end{exercise}
+
+\begin{exercise}{for}{1}{Scrivere un programma che stampi, per ogni numero x da 1 a 100, sia x che il suo doppio.}
+\begin{solution}
+for ( var x=0; x<=100; x=x+1 )
+{
+    var doppio = x*2;
+    writeln ( "il doppio di "+x+" è "+ doppio );
+}
+\end{solution}
+\end{exercise}
+
+
+\section{Esercizi sugli Array}
+
+
+\begin{exercise}{array}{1}{Dato un array, trovare il massimo}
+\begin{solution}
+function trova_massimo (A)
+{
+    var m = A[0];
+    for ( var i=1; i<A.length; ++i )
+    {
+        if (A[i]>max)
+        {
+            max = A[i];
+        }
+    }
+    return max;
+}
+\end{solution}
+\end{exercise}
+
+
+\end{document}
+
